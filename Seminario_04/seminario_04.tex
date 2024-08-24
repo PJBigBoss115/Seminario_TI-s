@@ -1,0 +1,131 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[spanish]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{setspace}
+
+\title{\vspace{-2cm}\large\textbf{Orquestación de servidores, Kurbenetes, Microservicios, OAuth2.0 e implementación de servicios en la nube (12-factor application).}}
+\author{}
+\date{\vspace{-2.2cm}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+    \textbf{P. J. Aguilar Vaides} \\
+    7690-20-8927 Universidad Mariano Gálvez \\
+    Seminario de Tecnologías de Información \\
+    \href{mailto:jperez@gmail.com}{paguilarv@miumg.edu.gt}
+\end{center}
+
+\section{Resumen}
+
+En la actualidad, el desarrollo y la implementación de aplicaciones en la nube han revolucionado la forma en que las empresas gestionan y despliegan sus servicios. Esta investigación se centra en varios conceptos clave que son fundamentales para aprovechar al máximo las tecnologías modernas en la nube: orquestación de servidores, Kubernetes, microservicios, OAuth 2.0 e implementación de servicios en la nube siguiendo la metodología de 12-Factor App.\\
+
+La orquestación de servidores permite la automatización y gestión eficiente de infraestructuras complejas, asegurando que los recursos se utilicen de manera óptima. Kubernetes, como plataforma líder de orquestación de contenedores, facilita el despliegue, escalado y administración de aplicaciones basadas en contenedores, siendo un componente esencial en arquitecturas de microservicios. Estos microservicios ofrecen una estructura modular que mejora la agilidad, escalabilidad y resiliencia de las aplicaciones al dividirlas en componentes independientes que pueden desarrollarse y gestionarse de manera autónoma.\\
+
+En términos de seguridad, OAuth 2.0 proporciona un protocolo robusto para la autorización, permitiendo a las aplicaciones acceder a los recursos de los usuarios sin comprometer las credenciales. Finalmente, la metodología 12-Factor App establece las mejores prácticas para desarrollar aplicaciones que sean escalables, portátiles y adecuadas para entornos de nube, garantizando que se optimicen para la implementación continua y el manejo de múltiples entornos.\\
+
+Este documento explorará estos conceptos en profundidad, destacando cómo se interrelacionan y cómo pueden aplicarse eficazmente en el desarrollo de aplicaciones modernas en la nube.\\
+
+\section{Palabras Clave}
+\subsection{Objetivo}
+El objetivo de este documento es proporcionar una comprensión profunda de las tecnologías y metodologías clave para la implementación y gestión de aplicaciones en la nube. Se busca explorar cómo la orquestación de servidores, Kubernetes, los microservicios, OAuth 2.0 y la metodología 12-Factor App se integran y complementan para crear aplicaciones modernas que sean escalables, seguras y eficientes. Además, se pretende ofrecer una guía práctica para aplicar estas tecnologías en el desarrollo de soluciones tecnológicas en entornos de producción en la nube.
+\begin{itemize}
+    \item Orquestación de servidores
+    \item Kubernetes
+    \item Microservicios
+    \item OAuth 2.0
+\end{itemize}
+
+\section{Orquestación de Servidores}
+\onehalfspacing
+La orquestación de servidores se refiere al proceso de automatización de la gestión, el aprovisionamiento, la coordinación y el monitoreo de servidores en un entorno de TI. Esto es esencial en ambientes donde se despliegan aplicaciones distribuidas, como en la nube, donde se manejan numerosos servidores y servicios que deben trabajar en conjunto. Las herramientas de orquestación, como Kubernetes, permiten gestionar contenedores, automatizar despliegues, escalar aplicaciones y gestionar la red y el almacenamiento de manera eficiente.
+
+\subsection{Kubernetes}
+Kubernetes es una plataforma de orquestación de contenedores de código abierto desarrollada por Google. Facilita la automatización del despliegue, escalado y gestión de aplicaciones en contenedores. Kubernetes agrupa contenedores en unidades lógicas para facilitar la administración y despliega las aplicaciones de manera consistente en diferentes entornos.
+\begin{enumerate}
+    \item \textbf{Despliegue Automatizado:} Automatiza la implementación y el rollback de aplicaciones.
+    \item \textbf{Escalado Automático:} Ajusta automáticamente el número de contenedores en función de la carga.
+    \item \textbf{Autocuración:} Reemplaza y reinicia contenedores que fallan, matando aquellos que no responden a los controles de salud.
+    \item \textbf{Gestión de Configuraciones:} Facilita la gestión de configuraciones sensibles y variables de entorno.
+\end{enumerate}
+
+\subsection{Microservicios}
+Los microservicios son un estilo de arquitectura que estructura una aplicación como un conjunto de servicios pequeños e independientes que se comunican entre sí a través de APIs. Cada servicio está alineado con una funcionalidad de negocio específica y puede ser desarrollado, desplegado y escalado de manera independiente. Este enfoque permite una mayor agilidad, escalabilidad y resiliencia en comparación con las arquitecturas monolíticas tradicionales.\\
+
+Características Principales:
+\begin{enumerate}
+    \item \textbf{Desacoplamiento:} Servicios independientes que permiten la actualización o reemplazo de partes de la aplicación sin afectar al todo.
+    \item \textbf{Despliegue Independiente:} Permite que los servicios sean desplegados de manera separada.
+    \item \textbf{Escalabilidad:} Cada microservicio puede ser escalado individualmente según la demanda.
+    \item \textbf{Resiliencia:} Fallas en un servicio no necesariamente afectan a los demás.
+\end{enumerate}
+
+\subsection{OAuth 2.0}
+OAuth 2.0 es un protocolo estándar de autorización que permite a las aplicaciones obtener acceso limitado a los recursos de un usuario en un servidor sin exponer las credenciales del usuario. OAuth 2.0 funciona mediante la concesión de tokens de acceso que autorizan el acceso a los recursos específicos del usuario por parte de la aplicación solicitante.\\
+
+Componentes Clave:
+\begin{enumerate}
+    \item \textbf{Resource Owner:} El usuario que autoriza el acceso.
+    \item \textbf{Client:} La aplicación que solicita el acceso.
+    \item \textbf{Authorization Server:} El servidor que autentica al usuario y emite los tokens.
+    \item \textbf{Resource Server:} El servidor que aloja los recursos protegidos y acepta tokens para acceder a ellos.
+\end{enumerate}
+
+\subsection{Implementación de Servicios en la Nube (12-Factor Application)}
+El 12-Factor App es una metodología para construir aplicaciones modernas, escalables y portátiles que se despliegan en la nube. Fue desarrollada por los ingenieros de Heroku y define doce mejores prácticas para desarrollar aplicaciones que aprovechan al máximo la computación en la nube.\\
+
+Los 12 Factores:
+\begin{enumerate}
+    \item Código Base: Una sola base de código por aplicación, gestionada en un sistema de control de versiones.
+    \item Dependencias: Declarar y aislar explícitamente las dependencias.
+    \item Configuración: Almacenar la configuración en el entorno, no en el código.
+    \item Servicios de Apoyo: Tratar servicios de respaldo (como bases de datos, colas, etc.) como recursos adjuntos.
+    \item Construir, Liberar, Ejecutar: Separar estrictamente los entornos de construcción, liberación y ejecución.
+    \item Procesos: Ejecutar la aplicación como uno o más procesos sin estado.
+    \item Asignación de Puertos: Expone los servicios a través de un puerto asignado.
+    \item Concurrencia: Escalar mediante el modelado de procesos como un conjunto de procesos concurrentes.
+    \item Descarte: Maximizar la robustez con un inicio rápido y un apagado limpio.
+    \item Paridad de Desarrollo/Producción: Mantener el desarrollo, la producción y el entorno de prueba lo más similares posible.
+    \item Logs: Tratar los logs como flujos de eventos.
+    \item Procesos Administrativos: Ejecutar tareas de administración/gestión como procesos puntuales.
+\end{enumerate}
+
+\section{Conexiones entre los temas}
+\begin{enumerate}
+    \item Kubernetes juega un papel crucial en la orquestación de servidores y es una plataforma ideal para desplegar aplicaciones basadas en microservicios.
+    \item La orquestación y la implementación en la nube siguiendo la metodología de 12-Factor App se complementan para garantizar que las aplicaciones sean escalables, resilientes y portátiles.
+    \item OAuth 2.0 es esencial para la seguridad en aplicaciones distribuidas y servicios en la nube, asegurando que las interacciones entre microservicios y usuarios se manejen de manera segura.
+\end{enumerate}
+
+\section{Observaciones y comentarios}
+Adopción de Kubernetes: Kubernetes se ha convertido en la plataforma estándar para la orquestación de contenedores debido a su capacidad para gestionar de manera eficiente aplicaciones complejas y distribuidas. Su flexibilidad y extensibilidad lo hacen ideal para entornos de producción que requieren alta disponibilidad y escalabilidad.\\
+
+Microservicios y Complejidad: Aunque la arquitectura de microservicios ofrece muchos beneficios, como la modularidad y la escalabilidad, también introduce complejidades adicionales, especialmente en la gestión de la comunicación entre servicios y el manejo de la seguridad. Es crucial considerar estas complejidades desde las etapas iniciales del diseño.\\
+
+\section{Conclusiones:}
+\begin{itemize}
+    \item Implementar Kubernetes Gradualmente: Para las organizaciones que están comenzando con Kubernetes, es recomendable iniciar con entornos de prueba y migrar gradualmente a producción. Esto permite familiarizarse con la plataforma y ajustar las configuraciones antes de desplegar aplicaciones críticas.
+    \item Capacitación Continua: Dado que estas tecnologías están en constante evolución, es recomendable invertir en la capacitación continua del equipo de desarrollo y operaciones para mantenerse al día con las mejores prácticas y nuevas herramientas disponibles en el ecosistema.
+\end{itemize}
+
+\section{Referecias:}
+\begin{itemize}
+    \item Hightower, K., Burns, B., & Beda, J. (2017). Kubernetes: Up and Running: Dive into the Future of Infrastructure. O'Reilly Media.
+    \item Newman, S. (2019). Building Microservices: Designing Fine-Grained Systems (2nd ed.). O'Reilly Media.
+    \item Chacon, Y., & Anderson, J. (2017). OAuth 2 in Action. Manning Publications.
+\end{itemize}
+
+Link GitHub: https://github.com/PJBigBoss115/Seminario_TIs.git
+
+\end{document}
